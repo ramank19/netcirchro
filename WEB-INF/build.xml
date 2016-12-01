@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project basedir=".." default="compile">
+
+	<property file="WEB-INF/build.properties" />
+	<property name="lib" value="WEB-INF/lib" />
+	<property name="javasrc" value="WEB-INF/src/java" />
+	<property name="confsrc" value="WEB-INF/src/conf" />
+	<property name="testsrc" value="WEB-INF/test" />
+	<property name="bin" value="WEB-INF/classes" />
+
+	<path id="tomcat.classpath">
+				<fileset dir="${tomcat.home}/common/lib">
+					<include name="*.jar" />
+				</fileset>
+	</path>
+
+	<path id="local.classpath">
+		<fileset dir="${lib}">
+			<include name="*.jar" />
+		</fileset>
+	</path>
+
+	<path id="project.classpath">
+		<path refid="local.classpath" />
+		<path refid="tomcat.classpath" />
+	</path>
+
+	<target name="clean">
+		<delete dir="${bin}" />
+	</target>
+
+	<target name="init">
+		<mkdir dir="${bin}" />
+	</target>
+
+	<target name="compile" depends="init">
+		<javac deprecation="on" debug="off" destdir="${bin}" source="1.5">
+			<classpath refid="project.classpath" />
+			<src path="${javasrc}" />
+			<!--src path="${testsrc}" / -->
+		</javac>
+		<copy todir="${bin}">
+			<fileset dir="${confsrc}" />
+		</copy>
+	</target>
+
+</project>

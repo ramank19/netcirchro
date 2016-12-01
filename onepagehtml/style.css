@@ -1,0 +1,41 @@
+body{
+    padding: 12px; 
+    font: 100.0% verdana;
+    color: #184688;
+    font-size: 14px;
+    
+}
+
+li {
+    font-family: verdana;
+ 
+}
+
+h1 {
+    padding: 2px;
+    background-color: #61AE48;
+    color: white;
+    text-align: center;
+}
+
+h2 {
+    padding: 2px;
+    background-color: #ccffcc;
+    color: black;
+    font-style: italic;
+    text-align: center;
+    margin: 15px 0px 0px 0px;
+}
+
+h3 {
+	margin: 0px 20px 0px 20px;
+}
+
+div.manualTitle{
+    text-align: center;
+}
+
+p {
+    line-height: 150%;
+    margin: 0px 20px 0px 20px;
+}

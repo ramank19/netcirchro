@@ -1,0 +1,880 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1'></meta>
+<title>NetCirChro Manual</title>
+<link rel="stylesheet" href="style.css" type="text/css"></link>
+</head>
+<body>
+<hr />
+<a name="Content__begin" /><h1 class="title">NetCirChro Manual</h1>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+<div class="manualTitle">
+<p> <b>User Manual  <br />
+<br />
+ Version 1.2</b></p>
+</div>
+
+<p> <br />
+<br />
+<br />
+</p>
+
+<div class="manualTitle">
+<p>Bioinformatics and Computational Biosciences Branch (BCBB) <br />
+OCICB/OSMO/OD/NIAID/NIH <br />
+<br />
+April 2012</p>
+</div>
+<hr />
+<a name="Introduction-to-NetCirChro__begin" /><h1 class="title">Introduction to NetCirChro</h1>
+
+<p>The abundance of complete, annotated microbial genomes has enabled the reconstruction of biological networks that incorporate diverse datasets including annotation, expression, and biochemical and physiological characterizations. Analysis of these networks assists in the identification of gene targets and the generation of new hypotheses about their functions. Since the functional association between genes may be inferred from chromosomal location and proximity, an interactive tool for visualizing and analyzing network data in the spatial context of the chromosome was needed. The NIAID Bioinformatics and Computational Bioscience Branch (BCBB) has developed the Networks on Circular Chromosome (NetCirChro) tool to enable users of the network visualization platform Cytoscape to overlay networks onto a circular chromosomal map. The synchronization of data selection between NetCirChro and Cytoscape allows users to leverage the rich Cytoscape features to navigate, search, filter, and highlight complex datasets. The unique NetCirChro analysis features support identifying user-specified gene coordinate patterns and network topology patterns on the chromosome. NetCirChro will help scientists discover the potential role of gene organization in functional regulatory networks. It will also assist in understanding the functional properties of neighboring genes.</p>
+<hr />
+<a name="Installation__begin" /><h1 class="title">Installation</h1>
+
+<ul><li>
+<p>Requirements</p>
+
+<p> 
+<ol><li>
+<p>OS: Windows XP SP2 or SP3, Mac OS X 10.5 (Leopard) or 10.6 (Snow Leopard), or Linux (e.g. Ubuntu 8.04 LTS desktop)</p>
+
+<p> </p>
+</li><li>
+<p>Java: Windows and Linux user can visit <a target="_blank" href="http://java.com/en/download/manual.jsp">http://java.com/en/download/manual.jsp</a> to download the latest version of Java. Mac OS X contains Java with the system. NetCirChro requires the latest release of Java 5 or Java 6.</p>
+
+<p> </p>
+</li><li>
+<p>Cytoscape: NetCirChro supports Cytoscape 2.6, 2.7, and 2.8. For Mac OS X users, it is strongly recommended to use Cytoscape 2.6.3 or later version.</p>
+</li></ol>
+</p>
+</li><li>
+<p>Installation</p>
+
+<p> 
+<ol><li>
+<p>Download NetCirChro plugin from <a target="_blank" href="http://exon.niaid.nih.gov">http://exon.niaid.nih.gov</a>.</p>
+</li><li>
+<p>Copy the file NetCirChro.jar to Cytoscape plugin/ folder.</p>
+</li></ol>
+</p>
+</li></ul>
+<hr />
+<a name="Quick-Start__begin" /><h1 class="title">Quick Start</h1>
+
+<p>NetCirChro supports the Cytoscape session management system. To download the NetCirChro plugin and an example session file, please visit NetCirChro official site <a target="_blank" href="http://exon.niaid.nih.gov">http://exon.niaid.nih.gov</a>.</p>
+
+<p>After you copy NetCirChro plugin into the Cytoscape plugin folder, you can use Cytoscape menu "File | Open" to open the session file.</p>
+<hr />
+<a name="Launch-NetCirChro__begin" /><h1 class="title">Launch NetCirChro</h1>
+
+<p>NetCirChro can be launched from Cytoscape menu "Plugin | NetCirChro".</p>
+<br/><p align="center">
+<img src="pics/cytoscape-menu.png" width="261" height="116" alt="Figure 1 NetCirChro plugin"/><br/>
+<em>Figure 1 NetCirChro plugin</em></p><br/>
+
+<p>The genome data panel will be displayed in the Cytoscape control panel.</p>
+<br/><p align="center">
+<img src="pics/import-ncbi.png" width="296" height="287" alt="Figure 2 Getting genome data"/><br/>
+<em>Figure 2 Getting genome data</em></p><br/>
+
+<p>NetCirChro can download the data from NCBI and read data from the local files. NetCirChro can also get the data from Cytoscape sessions. Currently, NetCirChro supports GenBank format file (.GBK) or protein table format file (.PTT).</p>
+<hr />
+<a name="Downloading-Genome-Sequence__begin" /><h1 class="title">Downloading Genome Sequence</h1>
+
+<p>NetCirChro downloads data files of complete microbial genomes from  http://www.ncbi.nlm.nih.gov/genomes/lproks.cgi?view=1.  </p>
+
+<ol><li>
+<p>Search</p>
+
+<p>After the button "Import from NCBI..." in the Cytoscape control panel is clicked, NetCirChro will display a download window for microbial genomes. The window displays a list of microbial genome projects. You can search any field in the window. </p>
+<br/><p align="center">
+<img src="pics/search-ncbi_400.jpg" width="400" height="193" alt="Figure 3 Searching complete microbial genome data"/><br/>
+<em>Figure 3 Searching complete microbial genome data</em></p><br/>
+</li><li>
+<p>Download</p>
+
+<p>Once you select an organism, you can click "Download" button to retrieve the data. In the popup window, the available chromosomes of the organism will be displayed. You can choose one or more chromosomes to download.</p>
+<br/><p align="center">
+<img src="pics/download-ncbi.png" width="335" height="510" alt="Figure 4 Downloading selected microbial data"/><br/>
+<em>Figure 4 Downloading selected microbial data</em></p><br/>
+</li><li>
+<p>Display</p>
+
+<p>Once the data is downloaded, NetCirChro will automatically read the file and visualize the chromosome.</p>
+<br/><p align="center">
+<img src="pics/visualize-1_400.jpg" width="400" height="293" alt="Figure 5 Displaying the data"/><br/>
+<em>Figure 5 Displaying the data</em></p><br/>
+</li></ol>
+<hr />
+<a name="Displaying-and-Manipulating-Diagrams__begin" /><h1 class="title">Displaying and Manipulating Diagrams</h1>
+
+<p>You can use NetCirChro to control the visual appearance of the chromosome diagrams and networks.</p>
+<h2><a href="#NetCirChro-Window__begin">NetCirChro Window</a></h2>
+<h2><a href="#NetCirChro-Menu__begin">NetCirChro Menu</a></h2>
+<h2><a href="#Mapping-Network__begin">Mapping Network</a></h2>
+<h2><a href="#Controlling-Visual-Appearance__begin">Controlling Visual Appearance</a></h2>
+<h2><a href="#Selecting-Network__begin">Selecting Network</a></h2>
+<h2><a href="#Selecting-Data__begin">Selecting Data</a></h2>
+<h2><a href="#Adding-Another-Chromosome__begin">Adding Another Chromosome</a></h2>
+<h2><a href="#Creating-Subnetwork__begin">Creating Subnetwork</a></h2>
+<h2><a href="#Saving-and-Opening-Session__begin">Saving and Opening Session</a></h2>
+<h2><a href="#Zooming-Diagram__begin">Zooming Diagram</a></h2>
+<h2><a href="#Saving-and-Printing-Image__begin">Saving and Printing Image</a></h2>
+<hr />
+<a name="NetCirChro-Window__begin" /><h1 class="title">NetCirChro Window</h1>
+
+<p>The main window of NetCirChro has similar structure as Cytoscape window. The left side of the main window is the control panel and bird's eye view. The control panel is used to adjust the diagram appearance. Birds' eye view helps you to navigate different part of the diagram if it is zoomed to a large size. </p>
+
+<p>At the right side are the visualization panel and data panel. The chromosome and network are displayed in the visualization panel. Data panel displays the GenBank annotation of the selected data in the visualization panel.</p>
+<br/><p align="center">
+<img src="pics/netcirchro-window_400.jpg" width="400" height="294" alt="Figure 6 NetCirChro main window"/><br/>
+<em>Figure 6 NetCirChro main window</em></p><br/>
+<hr />
+<a name="NetCirChro-Menu__begin" /><h1 class="title">NetCirChro Menu</h1>
+
+<p>Here is a quick tour of the NetCirChro menus.</p>
+<h2>File Menu</h2>
+
+<ul><li>
+<p>Open GBK/PTT File...</p>
+
+<p>Read the chromosome data file and visualize it. This is identical to  "Open GBK/PTT File..." button in the Cytoscape control panel.</p>
+</li><li>
+<p>Import from NCBI...</p>
+
+<p>Download complete microbial genomes from NCBI web site. This is identical to "Import from NCBI..." button in the Cytoscape control panel.</p>
+</li><li>
+<p>Open Session...</p>
+
+<p>Open saved session file. This is identical to "Open Session..." button in Cytoscape control panel. Session data includes both Cytoscape data and NetCirChro data.</p>
+</li><li>
+<p>Close Tab</p>
+
+<p>Close the current diagram. You can also choose to close the associated network in Cytoscape.</p>
+</li><li>
+<p>Close All Tabs</p>
+
+<p>Close all diagrams in NetCirChro. You can also choose to close all associated networks in Cytoscape.</p>
+</li><li>
+<p>Save Current Session</p>
+
+<p>Save the current genome data, networks, visual appearance settings, and data selection status to a session file.</p>
+</li><li>
+<p>Save Session As...</p>
+
+<p>Save session to a specific location.</p>
+</li><li>
+<p>Save Image As...</p>
+
+<p>Save the current image. NetCirChro supports many popular image format, including JPEG and PNG.</p>
+</li><li>
+<p>Export to SVG...</p>
+
+<p>Export the current image as SVG format.</p>
+</li><li>
+<p>Export to PDF...</p>
+
+<p>Export the current image as PDF format.</p>
+</li><li>
+<p>Print Preview...</p>
+
+<p>Preview the printing.</p>
+</li><li>
+<p>Print...</p>
+
+<p>Print the current diagram. You can also save or print to a PDF file in the print dialog.</p>
+</li><li>
+<p>Exit</p>
+
+<p>Close the NetCirChro window. You can choose to save the session when closing the NetCirChro window.</p>
+</li></ul>
+<h2>Edit Menu</h2>
+
+<ul><li>
+<p>Map Network...</p>
+
+<p>Map a network in Cytoscape to the chromosomes in NetCirChro. You can choose how the node attributes in Cytoscape networks is mapped to the features on the chromosomes.</p>
+</li><li>
+<p>Add Chromosome...</p>
+
+<p>Add another chromosome to the current diagram.</p>
+</li><li>
+<p>Create Network</p>
+
+<p>Create sub-networks of the current diagram based on the user selection.</p>
+</li><li>
+<p>Rename Genome Circle</p>
+
+<p>Rename the tab title of the current diagram.</p>
+</li><li>
+<p>Rename Track Name</p>
+
+<p>Rename the selected track in the chromosome.</p>
+</li></ul>
+<h2>View Menu</h2>
+
+<ul><li>
+<p>Zoom In</p>
+
+<p>You can use this menu to magnify the current diagram. You can also use Command-I (Mac) or Control-I (Windows) to zoom in the diagram.</p>
+</li><li>
+<p>Zoom Out</p>
+
+<p>You can use this menu to shrink the current diagram. You can also use Command-O (Mac) or Control-O (Windows) to zoom out the diagram.</p>
+</li><li>
+<p>Fit Window</p>
+
+<p>Reset the zoom level to make the whole diagram visible in current window.</p>
+</li></ul>
+<h2>Search Menu</h2>
+
+<ul><li>
+<p>Name or Function...</p>
+
+<p>Search gene name or GenBank functional annotation using Boolean expression.</p>
+</li><li>
+<p>Gene Coordinate...</p>
+
+<p>Search genes using the specified location ranges.</p>
+</li><li>
+<p>Coordinate Pattern...</p>
+
+<p>Search genes using the specified gene location relationships.</p>
+</li><li>
+<p>Path Starting from...</p>
+
+<p>Search all reachable genes starting from the selected genes in a specified step number.</p>
+</li><li>
+<p>First Neighbors and Adjacent Edges</p>
+
+<p>Get the neighborhoods of the selected genes.</p>
+</li></ul>
+<h2>Statistics Menu</h2>
+
+<ul><li>
+<p>Gene Distance Distribution</p>
+
+<p>Display the chart of gene distance distribution of all interacted genes or gene products. You can also visualize the distribution on the circular diagram.</p>
+</li><li>
+<p>Degree Distribution</p>
+
+<p>Display the chart of degree distribution over all genes or gene products in the network. You can also visualize the distribution on the circular diagram.</p>
+</li><li>
+<p>Shortest Path Distribution</p>
+
+<p>Display the chart of gene distance versus the shortest path length between any two genes or gene products.</p>
+</li><li>
+<p>Comparative Distribution Chart</p>
+
+<p>Display charts for multiple diagrams.</p>
+</li><li>
+<p>Cluster Coefficient and Coordination Closeness</p>
+
+<p>Display the chart of cluster coefficient versus coordinate closeness.</p>
+</li><li>
+<p>NetworkAnalyzer: Network Analysis</p>
+
+<p>If NetworkAnalyzer plugin v2.6 is installed, the analysis features can be called from NetCirChro.</p>
+</li><li>
+<p>NetworkAnalyzer: Network Modifications</p>
+
+<p>If NetworkAnalyzer plugin v2.6 is installed, the modification feature can be called from NetCirChro.</p>
+</li></ul>
+<h2>Window Menu</h2>
+
+<ul><li>
+<p>Cascade</p>
+
+<p>Rearrange Cytoscape and NetCirChro windows.</p>
+</li><li>
+<p>Active Window List</p>
+
+<p>All top windows of Cytoscape and NetCirChro are displayed under Window menu. You can choose any one to move it front.</p>
+</li></ul>
+<h2>Help Menu</h2>
+
+<ul><li>
+<p>Help Contents</p>
+
+<p>Display the NetCirChro manual.</p>
+</li><li>
+<p>About</p>
+
+<p>NetCirChro version information.</p>
+</li></ul>
+<hr />
+<a name="Mapping-Network__begin" /><h1 class="title">Mapping Network</h1>
+<h2>ID Mapping</h2>
+
+<p>After the chromosome data is loaded into NetCirChro, you need to decide how the nodes in the Cytoscape networks are mapped to the chromosome features in NetCirChro. Figure 7 shows the qualifiers of features in a chromosome. Figure 8 shows the node attributes of a network. In this example, the content of the qualifier "locus tag" is same as the content of the node attribute "canonicalName". Therefore, you need to specify these two fields in the mapping dialog. </p>
+
+<p>However, you may not get the complete mapping by just using one qualifier. For example, some nodes may use a gene synonym instead of locus tag as the canonical name. Therefore, you may have to specify multiple qualifiers to map the node attribute. NetCirChro enables you to use ordered qualifiers to map a node attribute. If the node attribute cannot be found in the first qualifier of all features, NetCirChro will try to map it to the second qualifier you specified, and so on.</p>
+<br/><p align="center">
+<img src="pics/feature-qualifier_400.jpg" width="400" height="173" alt="Figure 7 Qualifiers in NetCirChro"/><br/>
+<em>Figure 7 Qualifiers in NetCirChro</em></p><br/>
+<br/><p align="center">
+<img src="pics/node-attribute_400.jpg" width="400" height="236" alt="Figure 8 Node attributes in Cytoscape"/><br/>
+<em>Figure 8 Node attributes in Cytoscape</em></p><br/>
+<h2>Mapping Network Setting</h2>
+
+<p>You can get the mapping network dialog by clicking menu "Edit | Map Network..." In the dialog, you need to specify a network, a node attribute and one or more qualifiers for mapping.</p>
+
+<ul><li>
+<p>Network</p>
+
+<p>It contains all Cytoscape networks. Choose the one you want to display in the NetCirChro window.</p>
+</li><li>
+<p>Node attribute</p>
+
+<p>It contains all node attributes in Cytoscape. Try to identify the one you want to map.</p>
+</li><li>
+<p>Available qualifiers</p>
+
+<p>It lists all available qualifiers in the chromosome. </p>
+</li><li>
+<p>Qualifiers for mapping</p>
+
+<p>It lists all qualifiers that are used for mapping. If there is a network in the current NetCirChro diagram, this list contains the qualifiers used for the mapping. Otherwise, if there is no network in the chromosome diagram, you need to add one or more qualifiers from the "Available qualifiers" list to this list.</p>
+</li><li>
+<p>Add </p>
+
+<p>Add the selected values in the list "Available qualifiers" to the list "Qualifiers for mapping".</p>
+</li><li>
+<p>Remove</p>
+
+<p>Remove the selected values in the list "Qualifiers for mapping" to the list "Available qualifiers".</p>
+</li><li>
+<p>Move Up</p>
+
+<p>Move the selected values in the list "Qualifiers for mapping" up by one step.</p>
+</li><li>
+<p>Move Down</p>
+
+<p>Move the selected values in the list "Qualifiers for mapping" down by one step.</p>
+</li><li>
+<p>Map in Current Tab</p>
+
+<p>Draw the network in the current chromosome diagram.</p>
+</li><li>
+<p>Map in a New Tab</p>
+
+<p>Create a new tab, and draw the chromosome and the network diagram in the new tab.</p>
+</li><li>
+<p>Cancel</p>
+
+<p>Exit the dialog and do not change anything in the current diagram.</p>
+</li></ul>
+<br/><p align="center">
+<img src="pics/mapping-dialog_400.jpg" width="400" height="372" alt="Figure 9 Mapping network dialog"/><br/>
+<em>Figure 9 Mapping network dialog</em></p><br/>
+<hr />
+<a name="Controlling-Visual-Appearance__begin" /><h1 class="title">Controlling Visual Appearance</h1>
+
+<p>NetCirChro enables you to control many visual appearance of the chromosome-network diagram from the track color, location, position to block arrow, label and color.</p>
+<h2>Terminology</h2>
+
+<p>The functional annotation of GenBank data file is organized as <b><i>features</i></b>. Each feature has a feature <b><i>key</i></b> to describe the specific annotation. Standardized <b><i>qualifiers</i></b> gives the detail description of the annotation. Since the qualifiers are standardized and the qualifier values usually are controlled vocabulary, the annotation can be easily parsed and processed. You can get the detail annotation organization from <a target="_blank" href="http://www.ncbi.nlm.nih.gov/projects/collab/FT/index.html">http://www.ncbi.nlm.nih.gov/projects/collab/FT/index.html</a>.</p>
+<h2>Track Setting</h2>
+
+<p>A track is a ring-shape which represents selected feature sets of the chromosome. In the track setting window, you can add or delete a track. For each track, you can specify the width, position, and color of the current track. You can also specify which features are displayed in the track. For any changes in the track setting, you need click "Update" button to enable the changes on the diagram.</p>
+
+<p>Track setting can be saved by clicking "Save" button. This setting will be the default setting for any following circular diagram.</p>
+<br/><p align="center">
+<img src="pics/track-setting.png" width="296" height="466" alt="Figure 10 Track setting"/><br/>
+<em>Figure 10 Track setting</em></p><br/>
+
+<ul><li>
+<p>Update: Apply track setting changes to the current diagram. </p>
+</li><li>
+<p>Add: Add a new track to the diagram with default settings.</p>
+</li><li>
+<p>Save: Save the current track settings. All new tracks and new diagrams will use the saved track settings except the position.</p>
+</li><li>
+<p>Track dropdown list: Choose a track in the circular diagram.</p>
+</li><li>
+<p>"..." button: Rename the current track. The default track name is derived from the current feature filter setting (i.e. the combination of "Key" and "Qualifier" selection).</p>
+</li><li>
+<p>Mapped features only: If there is a network mapped to the circular chromosome and this option is enabled, the track will only contain the features which are mapped to the nodes in the network.</p>
+</li><li>
+<p>Key dropdown list: Key, qualifier and strand form the feature filter setting. Only the features that contain the key value will be displayed in the track. </p>
+</li><li>
+<p>Not: If this option is enabled, only the features which do not contain the following qualifier and the qualifier value will be displayed in the track.  </p>
+</li><li>
+<p>Qualifier dropdown list: Choose a qualifier to filter the features to be displayed in the track.</p>
+</li><li>
+<p>Qualifier value: Only display the features which have the qualifier value.</p>
+</li><li>
+<p>Remove Qualifier: Only display the features which contain the "key" annotation, and do not consider the specific qualifier values.</p>
+</li><li>
+<p>Forward: Display the features on the forward DNA strand.</p>
+</li><li>
+<p>Reverse: Display the features on the reverse DNA strand.</p>
+</li><li>
+<p>Any: Display all features regardless the feature filter setting (i.e. the key and qualifier selection)</p>
+</li><li>
+<p>Size: Control the width of the track.</p>
+</li><li>
+<p>Position: Control the position of the track. The position value ranges from 0 to 1. The outermost track has a position value 1. The center of the circular diagram has a position value 0.</p>
+</li><li>
+<p>Color: Control the color of the whole track. You can click the color box to get a color selection dialog.</p>
+</li><li>
+<p>Delete: Delete the current track.</p>
+</li></ul>
+<h2>Block Setting</h2>
+
+<p>A block is a small rectangle (or a line) which represents a feature of the chromosome. In the block setting window, you can get the name and location of the feature. The color, width, arrow and label display can be changed in this window.</p>
+<br/><p align="center">
+<img src="pics/block-setting.png" width="297" height="309" alt="Figure 11 Block setting"/><br/>
+<em>Figure 11 Block setting</em></p><br/>
+
+<ul><li>
+<p>Label: Display the gene name of the feature. You can not change it.</p>
+</li><li>
+<p>Start: Display the start position of the feature. You can not change it.</p>
+</li><li>
+<p>End: Display the end position of the feature. You can not change it.</p>
+</li><li>
+<p>Apply Color: Change the color of the block. YOu can click the color box to get a color selection dialog.</p>
+</li><li>
+<p>Line width: Change the width of the block. The default line width is same as the track width.</p>
+</li><li>
+<p>Head: Show an arrow of the feature to indicate the forward direction.</p>
+</li><li>
+<p>Tail: Show an arrow of the feature to indicate the backward direction.</p>
+</li><li>
+<p>None: Hide the arrow.</p>
+</li><li>
+<p>Show Label: Show the gene name besides the block.</p>
+</li></ul>
+<h2>Global Setting</h2>
+
+<p>In the global window, you can change several options for the whole circular diagram.</p>
+<br/><p align="center">
+<img src="pics/global-setting.png" width="302" height="269" alt="Figure 12 Global setting"/><br/>
+<em>Figure 12 Global setting</em></p><br/>
+
+<ul><li>
+<p>Background color: Apply the background color to all circular diagrams. You can click the color box to get a color selection dialog.</p>
+</li><li>
+<p>Block selection color: Apply the color to all selected blocks. You can click the color box to get a color selection dialog.</p>
+</li><li>
+<p>Use node color from VizMapper: If a network in Cytoscape is mapped to the current circular chromosome, the blocks of the mapped features will use identical node colors in the network.</p>
+</li><li>
+<p>Use edge arrow from VizMapper: If a network in Cytoscape is mapped to the current circular chromosome, the curved links in the diagram will use identical edge colors in the network.</p>
+</li><li>
+<p>Display selected track border: If this option is enabled, the selected track will be enclosed by two red circles.</p>
+</li><li>
+<p>Display selected node label: Display the gene name of the selected blocks and the blocks connected to the selected curved links.</p>
+</li><li>
+<p>Use smooth line for diagram: By default, NetCirChro draws diagrams with a high quality mode. You can disable this option to draw diagrams with a fast but relatively low quality mode. The graphics is anti-aliasing in the high quality mode.</p>
+</li></ul>
+<hr />
+<a name="Selecting-Network__begin" /><h1 class="title">Selecting Network</h1>
+
+<p>When you select a tab in NetCirChro, the associated network in Cytoscape will be automatically selected and moved to front if necessary. On the other hand, if you select a network in Cytoscape and there is only one tab in NetCirChro which has the mapped network, the tab will be automatically selected.</p>
+
+<p>When you close a tab in NetCirChro, if the network is not mapped to other chromosomes, NetCirChro will prompt a dialog to let you close the associated network in Cytoscape. If you try to close all tabs in NetCirChro, NetCirChro will also prompt a dialog to let you close all networks in Cytoscape.</p>
+
+<p>Similar to Cytoscape, NetCirChro has a network list panel in the control panel. You can use this panel to select, rename and destroy networks.</p>
+<br/><p align="center">
+<img src="pics/network-list.png" width="311" height="472" alt="Figure 13 Network list panel"/><br/>
+<em>Figure 13 Network list panel</em></p><br/>
+<hr />
+<a name="Selecting-Data__begin" /><h1 class="title">Selecting Data</h1>
+
+<p>After the network is mapped to the chromosome, the selection in Cytoscape and NetCirChro is always synchronized. In both visualization panels, the selected nodes (blocks) and edges are highlighted. Meanwhile, the data panel displays the corresponding attribute values and annotations. </p>
+<br/><p align="center">
+<img src="pics/selection-synchronization_400.jpg" width="400" height="229" alt="Figure 14 Selection synchronization"/><br/>
+<em>Figure 14 Selection synchronization</em></p><br/>
+
+<p>Since the data selection is synchronized between Cytoscape and NetCirChro, you can select, search or filter data from either Cytoscape or NetCirChro.</p>
+
+<p>There are several ways to select data in NetCirChro. </p>
+
+<ol><li>
+<p>In NetCirChro, you can use mouse to drag a region on the diagram. The enclosed blocks and edges will be selected.</p>
+<br/><p align="center">
+<img src="pics/select-data_400.jpg" width="400" height="337" alt="Figure 15 Select data by mouse dragging"/><br/>
+<em>Figure 15 Select data by mouse dragging</em></p><br/>
+</li><li>
+<p>Similar to Cytoscape, you can also choose data from data panel by right clicking and choosing "Select from table" menu.</p>
+<br/><p align="center">
+<img src="pics/select-from-table_400.jpg" width="400" height="105" alt="Figure 16 Selection from table"/><br/>
+<em>Figure 16 Selection from table</em></p><br/>
+</li><li>
+<p>All search results in NetCirChro will be automatically selected and highlighted.</p>
+<br/><p align="center">
+<img src="pics/select-by-search.png" width="295" height="129" alt="Figure 17 Selection from searching"/><br/>
+<em>Figure 17 Selection from searching</em></p><br/>
+</li></ol>
+
+<p>After the selection, the number of the selected nodes and edges are displayed in the network list panel of the control panel. You can also move the mouse outside of the circular diagram. A small yellow window will be displayed to show the mapping setting and the number of the selected nodes and edges.</p>
+<hr />
+<a name="Adding-Another-Chromosome__begin" /><h1 class="title">Adding Another Chromosome</h1>
+
+<p>NetCirChro supports multiple chromosomes in one diagram. The additional chromosome, by default, will be displayed as a new track from the same starting position as the existing tracks. In addition, any newly-added chromosome should have smaller length than the first chromosome. </p>
+
+<p>You can use menu "Edit | Add Chromosome..." to add a new chromosome. When the chromosome is added, the mapping between the network and the chromosomes will be updated automatically.</p>
+<hr />
+<a name="Creating-Subnetwork__begin" /><h1 class="title">Creating Subnetwork</h1>
+
+<p>When a subset of data is selected in a network, you can create a subnetwork in Cytoscape. Similarly, NetCirChro provides a subnetwork creation feature. You can use menu "Edit | Create Network" to create a subnetwork from the selected blocks and edges in the current circular chromosome diagram.</p>
+
+<p>There are several options for subnetwork creation.</p>
+
+<ul><li>
+<p>From selected nodes and selected edges</p>
+
+<p>The subnetwork contains all the selected nodes and nodes of selected edges.</p>
+</li><li>
+<p>From selected nodes and all edges</p>
+
+<p>The subnetwork contains all the selected nodes and edges among the selected nodes.</p>
+</li><li>
+<p>In new tab</p>
+
+<p>The subnetwork will be displayed in a new tab.</p>
+</li><li>
+<p>In current tab</p>
+
+<p>The subnetwork will replace the current diagram.</p>
+</li><li>
+<p>Clone current network </p>
+
+<p>The current diagram will be cloned and displayed in a new tab.</p>
+</li></ul>
+<hr />
+<a name="Saving-and-Opening-Session__begin" /><h1 class="title">Saving and Opening Session</h1>
+
+<p>NetCirChro supports the session saving and restoring of Cytoscape. The session file contains all the network data, chromosome data, visualization setting, and selection status.</p>
+<br/><p align="center">
+<img src="pics/session-menu.png" width="200" height="282" alt="Figure 18 Session menu"/><br/>
+<em>Figure 18 Session menu</em></p><br/>
+<br/><p align="center">
+<img src="pics/session-button.png" width="305" height="299" alt="Figure 19 Open session button"/><br/>
+<em>Figure 19 Open session button</em></p><br/>
+<hr />
+<a name="Zooming-Diagram__begin" /><h1 class="title">Zooming Diagram</h1>
+
+<p>To zoom in the current diagram, you can use the shortcut key Command-I (Mac OS X) or Control-I (Windows). To zoom out the diagram, you can use Command-O (Mac OS X) or Control-O (Windows). Finally, if you want to display the whole diagram in the current tab, you can use the menu "View | Fit Window".</p>
+<hr />
+<a name="Saving-and-Printing-Image__begin" /><h1 class="title">Saving and Printing Image</h1>
+
+<p>You can use the menu "File | Save Image As..." to export the image of the current diagram. NetCirChro supports many popular image formats including JPEG and PNG. </p>
+
+<p>If you want to export the high-quality image for publication purpose, you can export the image as SVG or PDF format.</p>
+<br/><p align="center">
+<img src="pics/file-menu.png" width="181" height="324" alt="Figure 20 Save image menu"/><br/>
+<em>Figure 20 Save image menu</em></p><br/>
+<hr />
+<a name="Link-Out__begin" /><h1 class="title">Link Out</h1>
+
+<p>NetCirChro provides "link out" feature similar to that of Cytoscape. When you select an gene in the NetCirChro data panel and right click it, a link out menu will be automatically displayed which allows you to search the gene in a variety of online databases.</p>
+<br/><p align="center">
+<img src="pics/link-out_400.jpg" width="400" height="248" alt="Figure 21 Link out"/><br/>
+<em>Figure 21 Link out</em></p><br/>
+<hr />
+<a name="Data-Panel__begin" /><h1 class="title">Data Panel</h1>
+
+<p>In addition to the selection and link out feature, NetCirChro data panel allows you to display detail qualifier data and export the selected genes to a text file.</p>
+<h2>Display Qualifier Value</h2>
+
+<p>By default, NetCirChro only display the gene name and functional annotation in the data panel, which are corresponding to the locus tag and notes in the qualifiers. You can right click the data panel and choose "Customize columns" to display other qualifier values. </p>
+<br/><p align="center">
+<img src="pics/customize-column-menu_400.jpg" width="400" height="94" alt="Figure 22 Customize columns menu"/><br/>
+<em>Figure 22 Customize columns menu</em></p><br/>
+<br/><p align="center">
+<img src="pics/customize-column-window_400.jpg" width="400" height="421" alt="Figure 23 Column selection window"/><br/>
+<em>Figure 23 Column selection window</em></p><br/>
+
+<p>You can also check the detail of selected features by clicking the popup menu "Show detail". In the detail window, the GenBank annotation of selected features are displayed.</p>
+<br/><p align="center">
+<img src="pics/column-detail-window_400.jpg" width="400" height="350" alt="Figure 24 Qualifer detail window"/><br/>
+<em>Figure 24 Qualifer detail window</em></p><br/>
+<h2>Export Data</h2>
+
+<p>The popup menu of the data panel contains a menu "Export data". This allows you to export the selected genes in NetCirChro to a tab delimited text files.</p>
+<hr />
+<a name="Searching-Data-in-NetCirChro__begin" /><h1 class="title">Searching Data in NetCirChro</h1>
+
+<p>NetCirChro provides several methods to search genes in the chromosome.</p>
+<h2><a href="#Searching-Gene-by-Name-and-Function__begin">Searching Gene by Name and Function</a></h2>
+<h2><a href="#Searching-Gene-by-Coordinate__begin">Searching Gene by Coordinate</a></h2>
+<h2><a href="#Searching-Coordinate-Pattern-on-Chromosome__begin">Searching Coordinate Pattern on Chromosome</a></h2>
+<h2><a href="#Searching-Paths-in-Network__begin">Searching Paths in Network</a></h2>
+<h2><a href="#Searching-Neighborhoods-in-Network__begin">Searching Neighborhoods in Network</a></h2>
+<hr />
+<a name="Searching-Gene-by-Name-and-Function__begin" /><h1 class="title">Searching Gene by Name and Function</h1>
+
+<p>NetCirChro provides powerful Boolean search capability for gene names and functional annotations. NetCirChro recognizes the searching expression formed by AND, OR, NOT, and parentheses.</p>
+<br/><p align="center">
+<img src="pics/search-name_400.jpg" width="400" height="353" alt="Figure 25 Search names or functions"/><br/>
+<em>Figure 25 Search names or functions</em></p><br/>
+<h2>Searching String Example</h2>
+
+<ul><li>
+<p>hypothetical</p>
+
+<p>Display if the annotation or gene name contains "hypothetical"</p>
+</li><li>
+<p>protein</p>
+
+<p>Display if the annotation or gene name contains "protein"</p>
+</li><li>
+<p>hypothetical OR protein</p>
+
+<p>Display if the annotation or gene name contains "hypothetical" or "protein"</p>
+</li><li>
+<p>hypothetical AND protein</p>
+
+<p>Display if the annotation or gene name contains "hypothetical" and "protein"</p>
+</li><li>
+<p>NOT hypothetical AND protein</p>
+
+<p>Display if the annotation or gene name contains "protein" but not "hypothetical"</p>
+</li><li>
+<p>NOT (hypothetical OR protein)</p>
+
+<p>Display if the annotation or gene name contains neither "hypothetical" nor "protein"</p>
+</li><li>
+<p>"hypothetical protein"</p>
+
+<p>Display if the annotation or gene name contains the whole string "hypothetical protein"</p>
+</li></ul>
+<h2>Select Subset of the Results </h2>
+
+<p>After you click "Search" button to get the query result, you can choose one or more by clicking the checkbox in the "Select?" column. Then, you can click "OK" button to display the selected data in the NetCirChro main window.</p>
+<hr />
+<a name="Searching-Gene-by-Coordinate__begin" /><h1 class="title">Searching Gene by Coordinate</h1>
+
+<p>You can search and highlight genes based on their coordinates. The input can be a single number, or a range by connecting the start and end position with a hyphen. You can separate multiple ranges by using comma. </p>
+<br/><p align="center">
+<img src="pics/coordinate-range_400.jpg" width="400" height="232" alt="Figure 26 Coordinate range search window"/><br/>
+<em>Figure 26 Coordinate range search window</em></p><br/>
+<hr />
+<a name="Searching-Coordinate-Pattern-on-Chromosome__begin" /><h1 class="title">Searching Coordinate Pattern on Chromosome</h1>
+
+<p>Coordinate pattern search provides a powerful tool to search the spatial pattern in the network. It enables the users to specify the spatial pattern with the length of gene patterns and the gap between genes. </p>
+<br/><p align="center">
+<img src="pics/coordinate-pattern_400.jpg" width="400" height="241" alt="Figure 27 Coordinate pattern search window"/><br/>
+<em>Figure 27 Coordinate pattern search window</em></p><br/>
+<h2>Terminology</h2>
+
+<p>Length and Degree are used to describe the contiguous node pattern with respect to position in the chromosome.
+<ul><li>
+<p>Length: one immediate neighbor accounts for length "one", second immediate neighbor is length "two".</p>
+</li><li>
+<p>Degree: degree "one" accounts for immediate neighbors, "two" accounts for a neighbor leaving one gene (also in the network) in between, "three" accounts for a neighbor leaving two genes in between.</p>
+</li></ul>
+</p>
+<h3>Example:</h3>
+
+<p><tt>Backbone --------</tt> </p>
+
+<p><tt>Length=1 --++----</tt> </p>
+
+<p><tt>Length=2 --+++---</tt> </p>
+
+<p><tt>Length=4 --+++++-</tt></p>
+
+<p><tt>Degree=1 ++------</tt></p>
+
+<p><tt>Degree=2 +-+-----</tt></p>
+
+<p><tt>Degree=3 +--+----</tt></p>
+<h2>Search Options</h2>
+
+<p>In the search window, you can specify the length and degree of the pattern. Meanwhile, you can choose how the pattern is searched in the network.</p>
+
+<ul><li>
+<p>Start position</p>
+
+<p>If you choose this option, you need to specify the start coordinate. Then NetCirChro searches the pattern from this position. When you click "Find" button, NetCirChro will highlight the pattern in the diagram. Then, you can click "Find Next" and NetCirChro will find the pattern in the following position automatically.</p>
+</li><li>
+<p>Common neighbors</p>
+
+<p>If you choose this option, NetCirChro tries to find all patterns in the chromosome. For each pattern, NetCirChro tries to find any gene which regulates (or interacts) all the genes in the pattern. If any genes found, the corresponding pattern will be selected and highlighted. </p>
+</li></ul>
+<hr />
+<a name="Searching-Paths-in-Network__begin" /><h1 class="title">Searching Paths in Network</h1>
+
+<p>NetCirChro can find a path or a loop in the network. First, you need select one or more genes in the diagram. NetCirChro will find all paths or loops starting from the selected genes. </p>
+
+<p>In the path finder window, you can specify the length of the path or loop. A large length may take a long time to complete the searching. NetCirChro will prompt a waiting dialog which displays the current found path number. This waiting dialog also allows you to cancel the searching if necessary.</p>
+<br/><p align="center">
+<img src="pics/path-finder_400.jpg" width="400" height="103" alt="Figure 28 Path finder window"/><br/>
+<em>Figure 28 Path finder window</em></p><br/>
+<br/><p align="center">
+<img src="pics/cancel-dialog.png" width="225" height="144" alt="Figure 29 Waiting dialog"/><br/>
+<em>Figure 29 Waiting dialog</em></p><br/>
+<hr />
+<a name="Searching-Neighborhoods-in-Network__begin" /><h1 class="title">Searching Neighborhoods in Network</h1>
+
+<p>NetCirChro can find all neighbors nodes and adjacent edges of selected nodes in a network. This feature is a combination of Cytoscape menu "Select | Nodes | First neighbors of selected nodes " and " Select | Edges | Select adjacent edges"</p>
+<br/><p align="center">
+<img src="pics/neighbor-menu.png" width="283" height="128" alt="Figure 30 Searching the neighbor nodes and edges"/><br/>
+<em>Figure 30 Searching the neighbor nodes and edges</em></p><br/>
+<hr />
+<a name="Statistics-in-NetCirChro__begin" /><h1 class="title">Statistics in NetCirChro</h1>
+
+<p>NetCirChro provides several statistics for the chromosome and network data. Beyond the conventional statistics, NetCirChro can visualize the quantitative results on the diagram. </p>
+<h2><a href="#Gene-Distance-Distribution__begin">Gene Distance Distribution</a></h2>
+<h2><a href="#Degree-Distribution__begin">Degree Distribution</a></h2>
+<h2><a href="#Shortest-Path-Distribution__begin">Shortest Path Distribution</a></h2>
+<h2><a href="#Comparative-Distribution-Chart__begin">Comparative Distribution Chart</a></h2>
+<h2><a href="#Cluster-Coefficient-and-Coordinate-Closeness__begin">Cluster Coefficient and Coordinate Closeness</a></h2>
+<h2><a href="#NetworkAnalyzer__begin">NetworkAnalyzer</a></h2>
+<hr />
+<a name="Gene-Distance-Distribution__begin" /><h1 class="title">Gene Distance Distribution</h1>
+
+<p>Gene distance means the coordinate distance between two genes of a chromosome. NetCirChro calculates the distance between every gene pair, if their products have an interaction in the protein-protein interaction network.</p>
+<br/><p align="center">
+<img src="pics/gene-distance-chart_400.jpg" width="400" height="383" alt="Figure 31 Gene distance distribution"/><br/>
+<em>Figure 31 Gene distance distribution</em></p><br/>
+
+<p>Based on the distance distribution, NetCirChro visualizes the distance on the circular diagram. If you click the button "Map to Circular Genome", NetCirChro will create a new map in the VizMapper. The value of gene distance is mapped to a continuous color range. The, the color of the edges in the Cytoscape and NetCirChro represents the distance between the two nodes/blocks. From the diagram, you can find that most interactions occur between gene products which are close to each other in the chromosome. </p>
+<br/><p align="center">
+<img src="pics/gene-distance-vizmap_400.jpg" width="400" height="293" alt="Figure 32 A new map of gene distance in VizMapper"/><br/>
+<em>Figure 32 A new map of gene distance in VizMapper</em></p><br/>
+<br/><p align="center">
+<img src="pics/gene-distance-map_400.jpg" width="400" height="361" alt="Figure 33 Mapping gene distance to edge color"/><br/>
+<em>Figure 33 Mapping gene distance to edge color</em></p><br/>
+<hr />
+<a name="Degree-Distribution__begin" /><h1 class="title">Degree Distribution</h1>
+
+<p>In a network, degree means the connection number of a node. NetCirChro calculates the degree of each node in a network and plots the node number of each degree in the chart. </p>
+<br/><p align="center">
+<img src="pics/degree-chart_400.jpg" width="400" height="342" alt="Figure 34 Degree distribution"/><br/>
+<em>Figure 34 Degree distribution</em></p><br/>
+
+<p>If you click the button "Map to Circular Genome", NetCirChro will create a new map in the VizMapper. The value of degree is mapped to a continuous color range. Then, the color of nodes in Cytoscape and the color of blocks in NetCirChro represent the degree number. From the diagram, you can quickly identify the network hub in the chromosome.</p>
+<br/><p align="center">
+<img src="pics/degree-vizmap_400.jpg" width="400" height="293" alt="Figure 35 A new map of degree distribution in VizMapper"/><br/>
+<em>Figure 35 A new map of degree distribution in VizMapper</em></p><br/>
+<br/><p align="center">
+<img src="pics/degree-map_400.jpg" width="400" height="353" alt="Figure 36 Mapping degree distribution to node color"/><br/>
+<em>Figure 36 Mapping degree distribution to node color</em></p><br/>
+<hr />
+<a name="Shortest-Path-Distribution__begin" /><h1 class="title">Shortest Path Distribution</h1>
+
+<p>Any two genes (or their products) in a network have one or more paths. This box plot chart displays the shortest path length versus their distances on the genome. The box plot chart displays the statistical distribution of the gene distances on shortest path length. The bottom and top of the box shows the 25th and 75th percentile (the lower and upper quartiles, respectively), and the band near the middle of the box shows the 50th percentile (the median). The T shape ends show the minimum and maximum of the data.</p>
+<br/><p align="center">
+<img src="pics/shortest-path_400.jpg" width="400" height="317" alt="Figure 37 Shortest path length distribution"/><br/>
+<em>Figure 37 Shortest path length distribution</em></p><br/>
+
+<p>Since it takes a long time to calculate all shortest path lengths in a large network, NetCirChro will prompt a waiting dialog during the calculation. You can stop the calculation any time by clicking the button "Cancel Task".</p>
+<br/><p align="center">
+<img src="pics/waiting-shortest-path.png" width="228" height="151" alt="Figure 38 Waiting dialog"/><br/>
+<em>Figure 38 Waiting dialog</em></p><br/>
+<hr />
+<a name="Comparative-Distribution-Chart__begin" /><h1 class="title">Comparative Distribution Chart</h1>
+
+<p>It is interesting to compare the statistics of several networks. These networks can be generated from different organisms, mutation types, or experimental conditions. NetCirChro provides the chart comparison between several networks.</p>
+<br/><p align="center">
+<img src="pics/compare-option.png" width="342" height="330" alt="Figure 39 Comparison options"/><br/>
+<em>Figure 39 Comparison options</em></p><br/>
+
+<p>In the comparison option window, you can choose which network will be used for the comparison, and which chart will be displayed. NetCirChro will display the charts for the selected network side-by-side.</p>
+<br/><p align="center">
+<img src="pics/compare-chart_400.jpg" width="400" height="401" alt="Figure 40 Comparison chart"/><br/>
+<em>Figure 40 Comparison chart</em></p><br/>
+<hr />
+<a name="Cluster-Coefficient-and-Coordinate-Closeness__begin" /><h1 class="title">Cluster Coefficient and Coordinate Closeness</h1>
+
+<p><a target="_blank" href="http://med.bioinf.mpi-inf.mpg.de/netanalyzer/help/2.6.1/index.html#cksDist">Cluster coefficient</a> defines the connection density in the neighbors of a network node. Coordinate closenenss is defined as the reciprocal of the average gene distance of a gene.</p>
+
+<p>For every node in the network, NetCirChro gets the neighbors of the node and calculates the cluster coefficient and coordinate closeness. The values are plotted as a scatter plot.</p>
+<br/><p align="center">
+<img src="pics/closeness-chart_400.jpg" width="400" height="335" alt="Figure 41 Cluster coefficient versus coordinate closeness"/><br/>
+<em>Figure 41 Cluster coefficient versus coordinate closeness</em></p><br/>
+<hr />
+<a name="NetworkAnalyzer__begin" /><h1 class="title">NetworkAnalyzer</h1>
+
+<p><a target="_blank" href="http://med.bioinf.mpi-inf.mpg.de/netanalyzer/index.php">NetworkAnalyzer</a> is a Cytoscape plugin to calculate many network topological properties. NetCirChro automatically detects if NetworkAnalyzer is installed in the user's Cytoscape folder. If the plugin exists, NetCirChro will add two menus under "Statistics" menu which provides a shortcut to the feature of NetworkAnalyzer plugin.</p>
+
+<p>This NetCirChro version is compatible with NetworkAnalyzer 2.6.1. </p>
+<br/><p align="center">
+<img src="pics/network-analyzer_400.jpg" width="400" height="159" alt="Figure 42 Network Analyzer menu"/><br/>
+<em>Figure 42 Network Analyzer menu</em></p><br/>
+<hr />
+<a name="Help__begin" /><h1 class="title">Help</h1>
+
+<p>NetCirChro provides a comprehensive help document with the application. The help system also has the fulltext search capability. You can get the help from the menu "Help | Help Contents".</p>
+
+<p>For downloading the plugin and sample data, please visit <a target="_blank" href="http://exon.niaid.nih.gov">http://exon.niaid.nih.gov</a>.</p>
+
+<p>For questions and comments, please email <a href="mailto:NetCirChroSupport@niaid.nih.gov">NetCirChroSupport@niaid.nih.gov</a>.</p>
+
+<hr />
+<a name="References__begin" /><h1 class="title">References</h1>
+
+<p>Shannon, P., Markiel, A., Ozier, O., Baliga, N.S., Wang J.T., Ramage, D., Amin, N., Schwikowski, B., Ideker, T. (2003). Cytoscape: a software environment for integrated models of biomolecular interaction networks. <i>Genome Res.</i> <b>13</b>:2498-2504.</p>
+
+<p>Assenov, Y., Ramírez, F., Schelhorn, S.E., Lengauer, T., Albrecht, M. Computing topological parameters of biological networks. (2008). <i>Bioinformatics</i>. <b>24</b>(2):282-284. </p>
+<hr />
+<a name="Citing-NetCirChro__begin" /><h1 class="title">Citing NetCirChro</h1>
+
+<p>In any work or product derived from this material, proper attribution of the authors as the source of the software or data should be made. </p>
+
+<p>Acknowledgements should read:</p>
+
+<p><b><i>"The NetCirChro software is developed and maintained at the Bioinformatics and Computational Biosciences Branch (BCBB), Office of Cyber Infrastructure and Computational Biology (OCICB), National Institute of Allergy and Infectious Diseases (NIAID) in Bethesda, Maryland, United States of America.  The software is freely available for download at <a target="_blank" href="http://exon.niaid.nih.gov">http://exon.niaid.nih.gov</a>."</i></b></p>
+<hr />
+<a name="License__begin" /><h1 class="title">License</h1>
+
+<p>NetCirChro is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either <a target="_blank" href="http://www.gnu.org/licenses/old-licenses/gpl-2.0.html">version 2</a> of the License, or (at your option) <a target="_blank" href="http://www.gnu.org/copyleft/gpl.html">any later version</a>.</p>
+
+<p>This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.</p>
+
+<p>You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.</p>
+<hr />
+<a name="Release-Notes__begin" /><h1 class="title">Release Notes</h1>
+
+<p>v1.2: Fix importing NCBI data bug using new address</p>
+
+<p>v1.1: Support Cytoscape 2.8.x</p>
+
+<p>v1.0: First release for Cytoscape 2.6.x</p>
+<hr />
+<a name="Acknowledgements__begin" /><h1 class="title">Acknowledgements</h1>
+
+<p>NetCirChro is built with a number of open source third-party Java libraries. The NetCirChro team gratefully acknowledges the following libraries:</p>
+
+<ul><li>
+<p>Cytoscape: A network visualization framework. Information is available at <a target="_blank" href="http://cytoscape.org/">http://cytoscape.org/</a>.</p>
+</li><li>
+<p>DNAPlotter and Artemis: A circular genome editor. Information is available at <a target="_blank" href="http://www.sanger.ac.uk/Software/Artemis/circular/">http://www.sanger.ac.uk/Software/Artemis/circular/</a>.</p>
+</li><li>
+<p>JFreeChart and JCommon: A 2D chart library. Information is available at <a target="_blank" href="http://www.jfree.org/jfreechart/">http://www.jfree.org/jfreechart/</a>.</p>
+</li><li>
+<p>JGraphT: A graph data structure and algorithm library. Information is available at <a target="_blank" href="http://jgrapht.sourceforge.net/">http://jgrapht.sourceforge.net/</a>.</p>
+</li><li>
+<p>JGoodies Forms. Information is available at <a target="_blank" href="http://www.jgoodies.com/freeware/forms/">http://www.jgoodies.com/freeware/forms/</a>.</p>
+</li><li>
+<p>BeansBinding. Information is available at <a target="_blank" href="http://www.netbeans.org/kb/60/java/gui-binding.html">http://www.netbeans.org/kb/60/java/gui-binding.html</a>.</p>
+</li><li>
+<p>Apache Commons HTTPClient: Information is available at <a target="_blank" href="http://hc.apache.org/httpclient-3.x/">http://hc.apache.org/httpclient-3.x/</a>.</p>
+</li><li>
+<p>Apache Commons Codec: Information is available at <a target="_blank" href="http://commons.apache.org/codec/">http://commons.apache.org/codec/</a>.</p>
+</li><li>
+<p>Apache Commons Collections: Information is available at <a target="_blank" href="http://commons.apache.org/collections/">http://commons.apache.org/collections/</a>.</p>
+</li><li>
+<p>Apache Commons Logging: Information is available at <a target="_blank" href="http://commons.apache.org/logging/">http://commons.apache.org/logging/</a>.</p>
+</li></ul>
+
+<p>NetCirChro uses a simplified curve generation algorithm derived from CirCos:  
+<ul><li>
+<p>CirCos: A genome visualization tool. Information is available at <a target="_blank" href="http://mkweb.bcgsc.ca/circos/">http://mkweb.bcgsc.ca/circos/</a>. </p>
+</li></ul>
+</p>
+</body>
+</html>

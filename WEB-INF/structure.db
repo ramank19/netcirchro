@@ -1,0 +1,14 @@
+DROP TABLE IF EXISTS `netcirchro_user`;
+CREATE TABLE  `netcirchro_user` (
+  `record_id` char(36) NOT NULL,
+  `email_address` varchar(63) NOT NULL,
+  `last_name` varchar(255) NOT NULL default '',
+  `first_name` varchar(255) NOT NULL default '',
+  `organization_name` varchar(255) NOT NULL,
+  `registration_time` datetime default NULL,
+  `nation` varchar(255) NOT NULL default 'United States',
+  `version` varchar(15) default NULL,
+  `message_source` text,  
+  PRIMARY KEY  (`record_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+ 
